@@ -16,14 +16,60 @@
 
 (function($) {
 
+  
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
 var Roots = {
   // All pages
   common: {
     init: function() {
+
+/*
+      // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
+      $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
+        event.preventDefault();
+        var $form = $(this).closest('form'),
+          $input = $form.find('input');
+        $form.addClass('active');
+        $input.focus();
+      });
+      // ONLY FOR DEMO // Please use $('form').submit(function(event)) to track from submission
+      // if your form is ajax remember to call `closeSearch()` to close the search container
+      $(document).on('click', '.navbar-collapse form[role="search"].active button[type="submit"]', function(event) {
+        event.preventDefault();
+        var $form = $(this).closest('form'),
+          $input = $form.find('input');
+        $('#showSearchTerm').text($input.val());
+          $form.find('input').val('');
+          $form.removeClass('active');
+      });
+*/
       // JavaScript to be fired on all pages
-    }
+      $('#slider, #album_gallery').carousel({
+        interval: 5000
+      });
+
+      $('#carousel-text').html($('#slide-content-0').html());
+      $('#carousel-selector-0').addClass("active");
+
+
+      //Handles the carousel thumbnails
+      $('[id^=carousel-selector-]').click( function(){
+              var id_selector = $(this).attr("id");
+              var idx = id_selector.substr(id_selector.length -1);
+              var id = parseInt(idx);
+              $('#slider, #album_gallery').carousel(id);
+      });
+
+
+      // When the carousel slides, auto update the text
+      $('#slider, #album_gallery').on('slid.bs.carousel', function (e) {
+              $('[id^=carousel-selector-]').removeClass('active');
+              var id = $('.item.active').data('slide-number');
+              $('#carousel-text').html($('#slide-content-'+id).html());
+              $('#carousel-selector-'+id).addClass("active");
+      });
+    } 
   },
   // Home page
   home: {

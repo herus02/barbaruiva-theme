@@ -25,7 +25,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+
       },
       all: [
         'Gruntfile.js',
@@ -145,7 +146,7 @@ module.exports = function(grunt) {
         // Browser live reloading
         // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
         options: {
-          livereload: false
+          livereload: true
         },
         files: [
           'assets/css/main.css',

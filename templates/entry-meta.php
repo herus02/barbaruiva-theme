@@ -1,2 +1,6 @@
-<time class="updated" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time>
-<p class="byline author vcard"><?php echo __('By', 'roots'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a></p>
+<?php
+$tax = get_object_taxonomies(get_post_type());
+$terms = get_the_term_list(get_the_id(), $tax, '',' / ');
+?>
+
+<h5><?php echo $terms; ?></h5>  <time class="updated" datetime="<?php echo get_the_time('c'); ?>">/ <?php echo get_the_date(); ?></time>

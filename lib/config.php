@@ -5,8 +5,8 @@
 add_theme_support('soil-clean-up');         // Enable clean up from Soil
 add_theme_support('soil-relative-urls');    // Enable relative URLs from Soil
 add_theme_support('soil-nice-search');      // Enable /?s= to /search/ redirect from Soil
-add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
-add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
+//add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
+add_theme_support('jquery');                 // Enable to load jQuery from the Google CDN
 
 /**
  * Configuration values
@@ -14,7 +14,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 
 if (!defined('WP_ENV')) {
-  define('WP_ENV', 'production');  // scripts.php checks for values 'production' or 'development'
+  define('WP_ENV', 'development');  // scripts.php checks for values 'production' or 'development'
 }
 
 /**

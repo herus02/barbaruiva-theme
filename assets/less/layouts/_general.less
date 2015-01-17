@@ -1,3 +1,170 @@
+// Body
+body {
+	background-color: #fafafa;
+}
+
+@font-face {
+    font-family: 'Maax Bold';
+    src: url('../fonts/maax-bold-webfont.eot');
+    src: url('../fonts/maax-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maax-bold-webfont.woff2') format('woff2'),
+         url('../fonts/maax-bold-webfont.woff') format('woff'),
+         url('../fonts/maax-bold-webfont.ttf') format('truetype'),
+         url('../fonts/maax-bold-webfont.svg#maaxbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maax Semibold';
+    src: url('../fonts/maax-medium-webfont.eot');
+    src: url('../fonts/maax-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maax-medium-webfont.woff2') format('woff2'),
+         url('../fonts/maax-medium-webfont.woff') format('woff'),
+         url('../fonts/maax-medium-webfont.ttf') format('truetype'),
+         url('../fonts/maax-medium-webfont.svg#maaxmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maax Regular';
+    src: url('../fonts/maax-webfont.eot');
+    src: url('../fonts/maax-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maax-webfont.woff2') format('woff2'),
+         url('../fonts/maax-webfont.woff') format('woff'),
+         url('../fonts/maax-webfont.ttf') format('truetype'),
+         url('../fonts/maax-webfont.svg#maaxregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Container fluid
+.container-fluid {
+	max-width: 1600px;
+	margin: auto;
+
+    @media (min-width: 768px) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+// Content
+section {
+    background-color: #fff;
+    display: block;
+    visibility: visible;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+
+    h5, time {
+        font-size: 12px;
+        font-family: @font-family-serif;
+        font-style: italic;
+        font-weight: 400;
+        float: left;
+        margin: 7px;
+        color: @brand-second;
+        line-height: 18px;
+        margin-left: 0px;
+        margin-right: 5px;
+
+        a {
+            font-size: 13px;
+            color: @brand-second;
+            text-transform: capitalize;
+        }
+    }
+    time {
+        color: @gray-light;
+    }
+
+    article:first-child, article:first-child {
+        border-left: 0;
+    }
+    article {
+        @media (min-width: 768px) {
+            height: 450px;
+            padding: 30px;
+        }
+        @media (max-width: 768px) {
+            height: 490px;
+            padding-top: 20px;
+        }
+        
+        border-left: 1px solid #f0f0f0;
+        height: 450px;
+
+        header {
+
+            h2 {
+                margin-top: 15px;
+                display: block;
+                clear: both;
+
+                a {
+                    font-size: 18px;
+                    color: @gray;
+                    font-family: @font-family-sans-serif;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    -webkit-font-smoothing: antialiased;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+                    text-transform: uppercase;
+                }
+            }
+        }
+        figure img {
+            width: 100%;
+            height: auto;
+        }
+        .entry-summary {
+            float: left;
+            display: block;
+            font-family: @font-family-serif;
+            color: @gray-light;
+            padding-top: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            line-height: 22px;
+
+            a {
+                font-family: @font-family-sans-serif;
+                font-weight: 600;
+                font-size: 11px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+// Empty
+.empty {
+    height: 500px;
+    display: block;
+    float: left;
+
+    h3 {
+        margin-top: 220px;
+        text-align: center;
+        display: block;
+    }
+}
+
+h1 {
+    color: @brand-primary;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+
 // Content wrapper
 .wrap { }
 
