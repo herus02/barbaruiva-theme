@@ -161,62 +161,6 @@ add_action( 'after_setup_theme', 'home_banner', 0 );
 
 add_theme_support('soil-relative-urls');
 
-// Attachments fields plugin
-function attachments_field( $attachments ) {
-  $args = array(
- 
-    // title of the meta box (string)
-    'label'         => 'Galeria',
- 
-    // all post types to utilize (string|array)
-    'post_type'     => array( 'albuns' ),
- 
-    // allowed file type(s) (array) (image|video|text|audio|application)
-    'filetype'      => ('image'),  // no filetype limit
- 
-    // include a note within the meta box (string)
-    'note'          => "Não há imagens!",
- 
-    // text for 'Attach' button in meta box (string)
-    'button_text'   => __( 'Escolher Imagens', 'attachments' ),
- 
-    // text for modal 'Attach' button (string)
-    'modal_text'    => __( 'Adicionar', 'attachments' ),
- 
-    /**
-     * Fields for the instance are stored in an array. Each field consists of
-     * an array with three keys: name, type, label.
-     *
-     * name  - (string) The field name used. No special characters.
-     * type  - (string) The registered field type.
-     *                  Fields available: text, textarea
-     * label - (string) The label displayed for the field.
-     */
- 
-    'fields'        => array(
-      array(
-        'name'  => 'title',                          // unique field name
-        'type'  => 'text',                           // registered field type
-        'label' => __( 'Title', 'attachments' ),     // label to display
-      ),
-      array(
-        'name'  => 'caption',                        // unique field name
-        'type'  => 'textarea',                       // registered field type
-        'label' => __( 'Caption', 'attachments' ),   // label to display
-      ),
-      array(
-        'name'  => 'copyright',                      // unique field name
-        'type'  => 'text',                           // registered field type
-        'label' => __( 'Copyright', 'attachments' ), // label to display
-      ),
-    ),
- 
-  );
- 
-  $attachments->register( 'attachments_field', $args ); // unique instance name
-}
- 
-add_action( 'attachments_register', 'attachments_field' );
 
 // Facebook Open Graph
 add_action('wp_head', 'add_fb_open_graph_tags');
