@@ -169,7 +169,7 @@ function attachments_field( $attachments ) {
     'label'         => 'Galeria',
  
     // all post types to utilize (string|array)
-    'post_type'     => array( 'albuns' ),
+    'post_type'     => 'albuns',
  
     // allowed file type(s) (array) (image|video|text|audio|application)
     'filetype'      => ('image'),  // no filetype limit
