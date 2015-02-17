@@ -8,6 +8,6 @@
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico" />
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo esc_url(get_feed_link()); ?>">
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Raleway:400,500,700' rel='stylesheet' type='text/css'>
-
+  <script src="//localhost:35729/livereload.js"></script>
   <?php wp_head(); ?>
 </head>

@@ -42,7 +42,7 @@ function roots_setup() {
 
     add_image_size('post-image', 428, 428, array( 'left', 'top' ), 1);
     add_image_size('album-image', 428, 428, array( 'left', 'top' ), 1);
-    add_image_size('home_banner-image', 1600, 700, array( 'center', 'center' ), 1);
+    add_image_size('home_banner-image', 1280, 700, array( 'center', 'center' ), 1);
   }
 
     add_post_type_support('post', 'excerpt');
