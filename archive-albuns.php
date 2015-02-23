@@ -5,7 +5,7 @@
 $args = array('order' => 'ASC');
 $terms = get_terms('esportes', $args);
 
-if (count($cat) > 0) {
+if (count($terms) > 0) {
 ?>
     <!-- albuns headline -->
     <section id="albums_list">
