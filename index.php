@@ -29,7 +29,7 @@ if (have_posts()) :
 
 ?>
         <div class="item<?php echo $active; ?>">
-            <?php the_post_thumbnail('home_banner-image', array('class' => 'img-responsive')); ?>
+            <?php the_post_thumbnail(array('class' => 'img-responsive')); ?>
             <div class="carousel-caption">
                 <h2><?php the_title(); ?></h2>
                 <p class="hidden-xs"><?php echo(get_the_excerpt());?> </p>
