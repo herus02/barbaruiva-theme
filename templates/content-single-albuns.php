@@ -3,14 +3,14 @@
 	<article <?php post_class(); ?>>
 		<!-- Slider -->
         <div class="row">
-            <div class="col-xs-12" id="slider">
+            <div class="col-xs-12">
 <?php
 $attachments = new Attachments( 'attachments_field', get_the_ID() );
 if( $attachments->exist() ) : 
 ?>
                 <!-- Top part of the slider -->
                 <div class="row">
-                    <div class="col-md-8" id="carousel-bounding-box">
+                    <div class="col-md-12" id="carousel-bounding-box">
                         <div class="carousel slide" id="album_gallery">
                             <div class="carousel-inner">
                             <!-- Carousel items -->
@@ -49,37 +49,69 @@ if( $attachments->exist() ) :
 ?>
                     </div>
                 </div>
-<?php 
-endif;
-?>
 
             </div>
         </div><!--/Slider-->
 
         <div class="row hidden-xs" id="slider-thumbs">
+            <div class="col-md-12">
+                <div class="carousel slide media-carousel" id="media">
+                <div class="carousel-inner">
 <?php
-$attachments = new Attachments( 'attachments_field', get_the_ID() );
-if( $attachments->exist() ) : 
-?>
-            <div class="span12">
-                <!-- Bottom switcher of slider -->
+    
+    // 
+    function num($t, $c, $total = null) {
+        $r = intval(($t % $c));
+        return ($r == 0) ? 3 : intval($c);
+        return $r;
+    }
 
-                <ul class="hide-bullets thumbnails">
-<?php
-	$i = 0;
-	while( $attachments->get() ) : 
+    $attachments = new Attachments( 'attachments_field', get_the_ID() );
+    $total = intval($attachments->total());
+
+    $col = intval(($total / 3));
+
+    // Attatchment loop
+    for ($i = 0; $i < $col; $i++) {
+
 ?>
-                    <li class="col-xs-1">
-                        <a class="thumbnail" id="carousel-selector-<?php echo $i;?>"><?php echo $attachments->image( 'thumbnail' ); ?></a>
-                    </li>
+                    <div class="item<?php echo ($i == 0) ? " active" : "";?>">
+                       <div class="row">
+
 <?php
-		$i++;
-	endwhile;
-endif;
+        //echo (($i * num($total, 3)));
+            //echo num($total, 3);
+        $z = intval($i * 3);
+        echo num($z,3);
+        for ($x = ($i * num($total, 3)); $x < num($z, 3); $x++) {
+            //echo $x;
+            if( $attachment = $attachments->get_single( $x ) ) { 
+            //$attachment = $attachments->get_single( $x );
+            //print_r($attachment);
+            /*
 ?>
-	           </ul>
+                            <div class="col-md-3 <?php echo ($z == 0) ? "active " : "";?>item" data-slide-number="<?php echo $z;?>">
+                                <a class="thumbnail" href="#" id="carousel-selector-<?php echo $z;?>"><img class="img-responsive" alt="" src="<?php echo $attachments->src( 'thumbnail', $x ); ?>"></a>
+                            </div>
+<?php
+            */
+            }
+        }
+?>
+                        </div>
+                    </div>
+
+<?php
+    }
+?>
+                </div>
+                <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+                <a data-slide="next" href="#media" class="right carousel-control">›</a>
             </div>
         </div>
+<?php 
+endif;
+?>
 
         <div class="content">
         	<p><i><?php echo the_excerpt();?></i></p>

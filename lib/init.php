@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Roots initial setup and constants
  */

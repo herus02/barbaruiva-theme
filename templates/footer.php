@@ -10,8 +10,14 @@
     </div>
     <div class="col-md-3">
 <?php
+//is_active_sidebar( 'sidebar-1' )  ) : 
+?>
 			dynamic_sidebar('footer-1'); 
 ?>
+<?php
+// endif; 
+ ?>
+
     </div>
     <div class="col-md-3">
     	<h4>Redes sociais</h4>
@@ -22,7 +28,7 @@
 ?>
     	<address>
 <?php
-			dynamic_sidebar('footer-2'); 
+			dynamic_sidebar('footer-1'); 
 ?>
     	</address>
 

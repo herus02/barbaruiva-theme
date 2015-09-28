@@ -45,8 +45,16 @@ var Roots = {
       });
 */
       // JavaScript to be fired on all pages
-      $('#slider, #album_gallery').carousel({
+      $('#slider').carousel({
         interval: 5000
+      });
+      $('#album_gallery').carousel({
+        interval: false,
+        wrap: true
+      });
+      $('#media').carousel({
+        pause: true,
+        interval: false
       });
 
       $('#carousel-text').html($('#slide-content-0').html());

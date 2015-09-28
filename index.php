@@ -90,7 +90,6 @@ $post_type_url = get_post_type_archive_link( 'post' );
 ?>
     <header id="blog_list_title">
         <h5><a href="<?php echo $post_type_url;?>">O Blog</a></h5>
-        <h2><a href="<?php echo $post_type_url;?>">Novidades sobre esporte</a></h2>
     </header>
 
     <!-- blog headline -->

@@ -3,26 +3,87 @@
 	width: 100%;
 	float: left;
 }
-#slider {
-	.carousel .carousel-control {
-		position: absolute;
-		display: block;
-		top: 50%;
-		width: 45px;
-		height: 45px;
-		line-height: 45px;
-		margin: -23px 0 0;
-		cursor: pointer;
-		text-align: center;
-		color: #fff;
-		font-size: 18px;
-		background-color: @gray;
-		z-index: 110;
-		//.fade(hsl(90, 90%, 50%), 10%)	
+
+#album_gallery {
+	height: 490px;
+	
+	img {
+		height: 490px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.carousel-control {
+	position: absolute;
+	display: block;
+	top: 50%;
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	margin: -23px 0 0;
+	cursor: pointer;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	background-color: @gray;
+	z-index: 110;
+	//.fade(hsl(90, 90%, 50%), 10%)	
 
 		span {
 			color: #fff;
 			opacity: 1;
 		}
 	}
+}
+/* carousel */
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel img
+{
+  width: 250px;
+  height: 100px
 }
