@@ -1,3 +1,6 @@
+<?php
+if (!is_page_template('template-manutencao.php')) {
+?>
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -36,3 +39,6 @@
 		</nav>
 	</div>
 </header>
+<?php
+} 
+?>
