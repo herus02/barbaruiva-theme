@@ -3,14 +3,14 @@
     <div class="col-md-3">
     	<h4>Links</h4>
 <?php
-		if (has_nav_menu('footer')) :
+		if (has_nav_menu('footer')) {
 			wp_nav_menu(array('theme_location' => 'footer', 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'menu-footer'));
-		endif;
+        }
 ?>
     </div>
     <div class="col-md-3">
 <?php
-        is_active_sidebar( 'sidebar-1' )  ) {
+        if (is_active_sidebar( 'sidebar-1' )) {
 			dynamic_sidebar('footer-1'); 
         }
 ?>
@@ -19,13 +19,13 @@
     <div class="col-md-3">
     	<h4>Redes sociais</h4>
 <?php
-		if (has_nav_menu('footer')) :
+		if (has_nav_menu('footer')) {
 			wp_nav_menu(array('theme_location' => 'social', 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'menu-social'));
-		endif;
+        }
 ?>
     	<address>
 <?php
-        is_active_sidebar( 'sidebar-1' )) {
+        if (is_active_sidebar( 'sidebar-1')) {
 			dynamic_sidebar('footer-1'); 
         }
 ?>
