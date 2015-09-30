@@ -1,3 +1,6 @@
+<?php
+if (!is_page_template('template-manutencao.php')) {
+?>
 <footer class="content-info" role="contentinfo">
   <div class="container-fluid">
     <div class="col-md-3">
@@ -38,4 +41,6 @@
     </div>
   </div>
 </footer>
-	
+<?php
+} 
+?>
